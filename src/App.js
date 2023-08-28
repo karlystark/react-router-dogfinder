@@ -6,6 +6,15 @@ import Nav from "./Nav";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
 
+/** Renders the app
+ *
+ * Props:
+ * -none
+ *
+ * State:
+ * dogs, initially an empty array
+ */
+
 function App() {
   const [dogs, setDogs] = useState([]);
 
@@ -13,6 +22,7 @@ function App() {
    getDogs();
   }
 
+/** makes a get request API call to get info on dogs*/
   async function getDogs() {
     const dogInfo = await axios.get("http://localhost:5001/dogs");
     const dogInfoKey = dogInfo.data.map( dog => ({ ...dog, key: uuid() }));
