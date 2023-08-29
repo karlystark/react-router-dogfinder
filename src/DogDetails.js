@@ -21,14 +21,14 @@ function DogDetails({ dogs }) {
   } else {
 
   return (
-    <div className="DogList">
+    <div className="DogDetails">
       <h1>{dog.name}</h1>
       <img src={`/${dog.src}.jpg`} alt={`${dog.name}`} style={{ width: 200 }} />
-      <h2>{dog.age}</h2>
+      <h2>Age: {dog.age}</h2>
 
       <ul>
-        {dog.facts.map(fact =>
-          <li>{fact}</li>)}
+        {dog.facts.map((fact, index) =>
+          <li key={index}>{fact}</li>)}
       </ul>
     </div>
   );

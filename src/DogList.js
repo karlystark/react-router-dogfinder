@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
  *
  * RouteList -> DogList
  */
-
+//TODO: we could use something unchanging/unique as the key
 function DogList({ dogs }) {
 
   return (
@@ -20,7 +20,7 @@ function DogList({ dogs }) {
           <br></br>
           <Link to={`/dogs/${dog.name}`}>{dog.name}</Link>
 
-          <p>{dog.age}</p>
+          <p>Age: {dog.age}</p>
           <ul>
             {dog.facts.map((fact, index) =>
               <li key={index}>{fact}</li>)}
@@ -29,7 +29,6 @@ function DogList({ dogs }) {
       )}
     </div>
   );
-
 }
 
 export default DogList;

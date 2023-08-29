@@ -13,8 +13,11 @@ import { v4 as uuid } from "uuid";
  *
  * State:
  * dogs, initially an empty array
+ *
+ * App -> Routelist
  */
 
+//TODO: give example of what dogs looks like after its been populated in docstring
 function App() {
   const [dogs, setDogs] = useState([]);
 
@@ -26,6 +29,7 @@ function App() {
   async function getDogs() {
     const dogInfo = await axios.get("http://localhost:5001/dogs");
     const dogInfoKey = dogInfo.data.map( dog => ({ ...dog, key: uuid() }));
+
     console.log(dogInfoKey);
     setDogs(dogInfoKey);
     console.log("DOGINFO", dogInfo);
@@ -34,8 +38,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav />
-        <RouteList dogs={dogs} getDogs={getDogs}/>
+        <Nav dogs={dogs}/>
+        <RouteList dogs={dogs} />
       </BrowserRouter>
     </div>
   );
