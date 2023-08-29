@@ -22,7 +22,7 @@ function DogDetails({ dogs }) {
 
   return (
     <div className="DogDetails">
-      <h1>{dog.name}</h1>
+      <h1 className="DogDetails-name">{dog.name}</h1>
       <img src={`/${dog.src}.jpg`} alt={`${dog.name}`} style={{ width: 200 }} />
       <h2>Age: {dog.age}</h2>
 

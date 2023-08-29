@@ -40,4 +40,56 @@
 .Nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: goldenrod;
+  padding: 2px;
+  margin-bottom: 10px;
 }
+
+.Nav-link, .DogList-name {
+  text-decoration: none;
+  color: black;
+}
+
+.Nav-title {
+  font-size: 1.5em;
+}
+
+.DogList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.DogList-container {
+  background-color: goldenrod;
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.DogList-container:hover {
+  transition: .3s ease-in-out;
+  transform: scale(1.05);
+}
+
+.DogList-name {
+  font-size: 2em;
+}
+
+.DogList-name:hover {
+  color: white;
+}
+
+.DogDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black dashed;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+

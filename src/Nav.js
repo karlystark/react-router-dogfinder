@@ -16,12 +16,13 @@ function Nav( {dogs} ){
 
   return (
     <nav className="Nav">
-      <NavLink to='/dogs' style={({ isActive }) =>
+      <p className="Nav-title">DogFinder</p>
+      <NavLink to='/dogs' className="Nav-link" style={({ isActive }) =>
               isActive ? activeStyle : undefined} end>
         Home
       </NavLink>
 
-      {dogs.map(dog => (<NavLink key={dog.key} to={`/dogs/${dog.name}`} style={({ isActive }) =>
+      {dogs.map(dog => (<NavLink key={dog.key} to={`/dogs/${dog.name}`} className="Nav-link" style={({ isActive }) =>
               isActive ? activeStyle : undefined}>
         {dog.name}
       </NavLink>

@@ -15,16 +15,11 @@ function DogList({ dogs }) {
   return (
     <div className="DogList">
       {dogs.map(dog =>
-        <div className={`${dog.name}`} key={dog.key}>
+        <div className={`${dog.name} DogList-container`} key={dog.key}>
           <img src={`/${dog.src}.jpg`} alt={`${dog.name}`} style={{width:200}}/>
           <br></br>
-          <Link to={`/dogs/${dog.name}`}>{dog.name}</Link>
-
-          <p>Age: {dog.age}</p>
-          <ul>
-            {dog.facts.map((fact, index) =>
-              <li key={index}>{fact}</li>)}
-          </ul>
+          <br></br>
+          <Link to={`/dogs/${dog.name}`} className="DogList-name">{dog.name}</Link>
         </div>
       )}
     </div>
